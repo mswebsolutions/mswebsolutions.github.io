@@ -16,16 +16,74 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+		
+		<style>
+			.overlay {
+			  height: 100%;
+			  width: 0;
+			  position: fixed;
+			  z-index: 1;
+			  top: 0;
+			  left: 0;
+			  background-color: rgb(0,0,0);
+			  background-color: rgba(0,0,0, 0.9);
+			  overflow-x: hidden;
+			  transition: 0.5s;
+			}
+			.overlay-content {
+			  position: relative;
+			  top: 25%;
+			  width: 100%;
+			  text-align: center;
+			  margin-top: 30px;
+			}
+			.overlay a {
+			  padding: 8px;
+			  text-decoration: none;
+			  font-size: 36px;
+			  color: #818181;
+			  display: block;
+			  transition: 0.3s;
+			}
+			.overlay a:hover, .overlay a:focus {
+			  color: #f1f1f1;
+			}
+			.overlay .closebtn {
+			  position: absolute;
+			  top: 20px;
+			  right: 45px;
+			  font-size: 60px;
+			}
+			@media screen and (max-height: 450px) {
+			  .overlay a {font-size: 20px}
+			  .overlay .closebtn {
+			  font-size: 40px;
+			  top: 15px;
+			  right: 35px;
+			  }
+			}
+		</style>
+				
+		<script>
+			function openProductDetail(productId) {
+			  document.getElementById("productDetail_" + productId).style.width = "100%";
+			}
+			function closeProductDetail(productId) {
+			  document.getElementById("productDetail_" + productId).style.width = "0%";
+			}
+		</script>
+		
+		
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <!--a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"><a href="#page-top">Big Discount Store</a></li>
 				<li class="sidebar-nav-item"><a href="#catalog">Catalog 보기</a></li>
             </ul>
-        </nav>
+        </nav-->
         <!-- Header-->
         <header class="masthead d-flex align-items-center" style="height:60px">
             <div class="container px-4 px-lg-5 text-center">
@@ -33,19 +91,72 @@
                 <h3 class="mb-5"><em>Big discount 50% or more</em></h3>
 				<h3 class="mb-5"><em>LA Downtown, Fullerton 에서 픽업가능. 문자나 쪽지 남겨주세요. </em></h3>
 				<a class="btn btn-primary btn-xl" href="#catalog">상품 보기</a>
-
             </div>
+			
+			
+<!-- Product Detail Begin -->
+
+			                <!-- Product Detail -->
+			                <div id="productDetail_25" class="overlay" >
+                                <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(25)">&times;</a>				                
+				                <div class="overlay-content">
+					                <h2 class="text-white">안녕ㅇㅇㅇ</h2>
+					                <h6 class="text-white">안녕</h6>
+                                    <h6 class="text-white">23.00</h6>					             
+                                    <img src = "assets\img\bcf6d811-df90-452e-b06e-cfe4fab4db7d.jpg" alt= "" class="responsive"><img src = "assets\img\48ff712d-ae85-4b26-abd2-58ae0554683b.jpg" alt= "" class="responsive"><img src = "assets\img\aef66dd3-bc33-47c1-a6cd-b6cb8cd157f4.jpg" alt= "" class="responsive">
+					                <br/><br/>
+					                <div class="d-flex justify-content-center">
+						                <a class="btn btn-primary text-white"  onclick="closeProductDetail(25)">Close</a>
+					                </div>				
+				                </div>
+			                </div>		
+			                <!-- End-->
+                            
+			                <!-- Product Detail -->
+			                <div id="productDetail_29" class="overlay" >
+                                <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(29)">&times;</a>				                
+				                <div class="overlay-content">
+					                <h2 class="text-white">블블</h2>
+					                <h6 class="text-white">쁠라블라</h6>
+                                    <h6 class="text-white"></h6>					             
+                                    <img src = "assets\img\27b6f1b2-b262-4698-9725-80e1eb741410.jpg" alt= "" class="responsive">
+					                <br/><br/>
+					                <div class="d-flex justify-content-center">
+						                <a class="btn btn-primary text-white"  onclick="closeProductDetail(29)">Close</a>
+					                </div>				
+				                </div>
+			                </div>		
+			                <!-- End-->
+                            
+			                <!-- Product Detail -->
+			                <div id="productDetail_30" class="overlay" >
+                                <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(30)">&times;</a>				                
+				                <div class="overlay-content">
+					                <h2 class="text-white">xxxxxxxxx</h2>
+					                <h6 class="text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+                                    <h6 class="text-white"></h6>					             
+                                    <img src = "assets\img\7395c97a-df7d-4c98-b15b-924c07ca4bce.jpg" alt= "" class="responsive">
+					                <br/><br/>
+					                <div class="d-flex justify-content-center">
+						                <a class="btn btn-primary text-white"  onclick="closeProductDetail(30)">Close</a>
+					                </div>				
+				                </div>
+			                </div>		
+			                <!-- End-->
+                            
+						
+<!-- Product Detail End -->
+			
 		</header>
 		
 <section class="content-section bg-light" id="catalog">
 <div class="row">
 <!-- Catalog Items Begin -->
-
                             <!-- Gallery item -->
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class="bg-white rounded shadow-sm"><img src = "assets\img\bcf6d811-df90-452e-b06e-cfe4fab4db7d.jpg" alt="" class="img-fluid card-img-top">
+                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(25)"><img src = "assets\img\bcf6d811-df90-452e-b06e-cfe4fab4db7d.jpg" alt="" class="img-fluid card-img-top"></a>
                                     <div class="p-4">
-                                        <h5> <a href = "#" class="text-dark">안녕ㅇㅇㅇ</a></h5>
+                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(25)">안녕ㅇㅇㅇ</a></h5>
                                         <p class="small text-muted mb-0">안녕</p>
                                         <p class="small mb-0 ">23.00</p>                                        
                                     </div>
@@ -55,9 +166,9 @@
                             
                             <!-- Gallery item -->
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class="bg-white rounded shadow-sm"><img src = "assets\img\27b6f1b2-b262-4698-9725-80e1eb741410.jpg" alt="" class="img-fluid card-img-top">
+                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(29)"><img src = "assets\img\27b6f1b2-b262-4698-9725-80e1eb741410.jpg" alt="" class="img-fluid card-img-top"></a>
                                     <div class="p-4">
-                                        <h5> <a href = "#" class="text-dark">블블</a></h5>
+                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(29)">블블</a></h5>
                                         <p class="small text-muted mb-0">쁠라블라</p>
                                         <p class="small mb-0 "></p>                                        
                                     </div>
@@ -67,9 +178,9 @@
                             
                             <!-- Gallery item -->
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class="bg-white rounded shadow-sm"><img src = "assets\img\7395c97a-df7d-4c98-b15b-924c07ca4bce.jpg" alt="" class="img-fluid card-img-top">
+                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(30)"><img src = "assets\img\7395c97a-df7d-4c98-b15b-924c07ca4bce.jpg" alt="" class="img-fluid card-img-top"></a>
                                     <div class="p-4">
-                                        <h5> <a href = "#" class="text-dark">xxxxxxxxx</a></h5>
+                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(30)">xxxxxxxxx</a></h5>
                                         <p class="small text-muted mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                                         <p class="small mb-0 "></p>                                        
                                     </div>
@@ -77,565 +188,9 @@
                                 </div>
                             <!-- End -->
                             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Catalog Items End -->
     </div>
-
         </section>
-
-
-
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
