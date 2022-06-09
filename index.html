@@ -35,8 +35,15 @@
 			  top: 25%;
 			  width: 100%;
 			  text-align: center;
-			  margin-top: 30px;
+			  margin-top: 10px;
 			}
+			
+			.overlay-inner-content {			
+				padding: 30px;
+				margin: 30px;
+				background-color: #ECF0F1;
+			}
+			
 			.overlay a {
 			  padding: 8px;
 			  text-decoration: none;
@@ -50,7 +57,7 @@
 			}
 			.overlay .closebtn {
 			  position: absolute;
-			  top: 20px;
+			  top: 2px;
 			  right: 45px;
 			  font-size: 60px;
 			}
@@ -66,6 +73,18 @@
 			.removeBodyOverFlow {
 				overflow-y:hidden;
 			}
+			
+			#thumbs img {
+				opacity: 0.5;
+				filter: alpha(opacity=50); /* msie */
+				border: 1px solid #A6ACAF;
+			}
+			
+			#thumbs img:hover {
+				opacity: 1;
+				filter: alpha(opacity=100); /* msie */	
+				border: 1px solid #F5B041;				
+			}
 		</style>
 				
 		<script>
@@ -77,6 +96,12 @@
 			  document.getElementById("productDetail_" + productId).style.width = "0%";
 			  document.body.classList.remove('removeBodyOverFlow')
 			}
+			
+			function displayImage(imageTag) {
+				imageTag.getAttribute('src')			
+				document.getElementById('largeImage').setAttribute('src',imageTag.getAttribute('src'));
+			}
+			
 		</script>
 		
 		
@@ -93,33 +118,50 @@
         <!-- Header-->
         <header class="masthead d-flex align-items-center" style="height:60px">
             <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">Big 활인매장 </h1>
-                <h3 class="mb-5"><em>Big discount 50% or more</em></h3>
-				<h3 class="mb-5"><em>LA Downtown, Fullerton 에서 픽업가능. 문자나 쪽지 남겨주세요. </em></h3>
-				<a class="btn btn-primary btn-xl" href="#catalog">상품 보기</a>
+                <h1 class="mb-1">벼룩시장</h1>
+                <h3 class="mb-5"><em>가지고 있는 물건들 싸게 처리합니다 </em></h3>
+				<h3 class="mb-5"><em>LA Downtown, Fullerton 에서 픽업가능. 미시, 라디오 코리아 에서 문자나 쪽지 남겨주세요. </em></h3>
+				<a class="btn btn-primary btn-xl" href="#catalog">물건 보기</a>
             </div>
-			
-			
+	
 <!-- Product Detail Begin -->
 
 			                <!-- Product Detail -->
 			                <div id="productDetail_36" class="overlay" >
                                 <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(36)">&times;</a>				                
 				                <div class="overlay-content">
-					                <h2 class="text-white">Sound Bar</h2>
-					                <h6 class="text-white">플러튼,엘에이 다운타운 픽업
-캐쉬온리, 노리턴
+                                    <div class="overlay-inner-content">
+                                        <h2>Sound Bar</h2>
+					                    <h6 class="px-4">플러튼,엘에이 다운타운 픽업<br/>캐쉬온리, 노리턴<br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/>많이 나와요</h6>
+                                        <h6></h6>	
+                                        <br/>
+										
+<div id="gallery">
+	<div id="panel">
+		<img id="largeImage" src="assets/img/1ed82a5d-c3b7-4478-8856-3587def58f1d..jpg" />
+		<div id="description">1st image description</div>
+	</div>
 
-제 아이디로 검색하시면 사용하지 않은 물건들
-많이 나와요</h6>
-                                    <h6 class="text-white"></h6>	
-                                    <br/>
-                                    <div class="row"><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\3d1f2a0d-229e-434f-9662-ecf67a40151f.jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\a50c4c40-a90f-4ab3-b563-8bfc45bfb7be.jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\09da94af-1c5e-49bf-b323-074b3e67038b.jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div></div>
-					                <br/><br/>
-					                <div class="d-flex justify-content-center">
-						                <a class="btn btn-primary text-white"  onclick="closeProductDetail(36)">Close</a>
-					                </div>		
-                                    <br/><br/>
+	<div id="thumbs">
+        <img src="assets/img/1ed82a5d-c3b7-4478-8856-3587def58f1d..jpg" width=100 alt="1st image description" onmouseover="displayImage(this);" class="selectedImg"  />
+		<img src="assets/img/dbe4e050-91fa-49f4-bb6a-e575de1d99a1..jpg" width=100 alt="2nd image description" onmouseover="displayImage(this);"  />
+        <img src="images/image_03_thumb.jpg" alt="3rd image description" width=100  />
+        <img src="images/image_04_thumb.jpg" alt="4th image description" width=100  />
+        <img src="images/image_05_thumb.jpg" alt="5th image description" width=100  />
+	</div>
+</div>										
+										
+										
+										
+										
+										
+                                        <div class="row"><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\1ed82a5d-c3b7-4478-8856-3587def58f1d..jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\dbe4e050-91fa-49f4-bb6a-e575de1d99a1..jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\6a9fbf19-3e25-4f66-adfa-dae0e4b3d28a..jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\6c55cd22-2c87-4d8e-ba10-b2e500973e00..jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\d64f50a4-357b-45aa-b7f1-397c9f7b1678..jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\bc26c972-2faf-44f0-b9e4-9cf2a2074369..PNG" alt= "" class="img-fluid card-img-top" loading="lazy"></div></div>
+					                    <br/><br/>
+					                    <div class="d-flex justify-content-center">
+						                    <a class="btn btn-primary text-white"  onclick="closeProductDetail(36)">Close</a>
+					                    </div>		
+                                        <br/><br/>
+                                    </div>
 				                </div>
 			                </div>		
 			                <!-- End-->
@@ -128,23 +170,18 @@
 			                <div id="productDetail_35" class="overlay" >
                                 <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(35)">&times;</a>				                
 				                <div class="overlay-content">
-					                <h2 class="text-white">New Air Fryer</h2>
-					                <h6 class="text-white">New air fryer $30
-
-
-플러튼,엘에이 다운타운 픽업
-캐쉬온리, 노리턴
-
-제 아이디로 검색하시면 사용하지 않은 물건들
-많이 나와요</h6>
-                                    <h6 class="text-white">30.00</h6>	
-                                    <br/>
-                                    <div class="row"><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\87673e8f-ac11-4396-8d69-6a5c808a6f1b.jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\c27a0767-7b7e-4e1c-9e88-72a32ad6980e.jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div></div>
-					                <br/><br/>
-					                <div class="d-flex justify-content-center">
-						                <a class="btn btn-primary text-white"  onclick="closeProductDetail(35)">Close</a>
-					                </div>		
-                                    <br/><br/>
+                                    <div class="overlay-inner-content">
+                                        <h2>New Air Fryer</h2>
+					                    <h6 class="px-4">New air fryer $30<br/><br/><br/>플러튼,엘에이 다운타운 픽업<br/>캐쉬온리, 노리턴<br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/>많이 나와요</h6>
+                                        <h6>30.00</h6>	
+                                        <br/>
+                                        <div class="row"><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\87673e8f-ac11-4396-8d69-6a5c808a6f1b.jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div><div class="col-xl-3 col-lg-4 col-md-6 mb-4"><img src = "assets\img\c27a0767-7b7e-4e1c-9e88-72a32ad6980e.jpg" alt= "" class="img-fluid card-img-top" loading="lazy"></div></div>
+					                    <br/><br/>
+					                    <div class="d-flex justify-content-center">
+						                    <a class="btn btn-primary text-white"  onclick="closeProductDetail(35)">Close</a>
+					                    </div>		
+                                        <br/><br/>
+                                    </div>
 				                </div>
 			                </div>		
 			                <!-- End-->
@@ -159,13 +196,10 @@
 <!-- Catalog Items Begin -->
                             <!-- Gallery item -->
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(36)"><img src = "assets\img\3d1f2a0d-229e-434f-9662-ecf67a40151f.jpg" alt="" class="img-fluid card-img-top" loading="lazy"></a>
+                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(36)"><img src = "assets\img\1ed82a5d-c3b7-4478-8856-3587def58f1d..jpg" alt="" class="img-fluid card-img-top" loading="lazy"></a>
                                     <div class="p-4">
                                         <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(36)">Sound Bar</a></h5>
-                                        <p class="small text-muted mb-0">플러튼,엘에이 다운타운 픽업
-캐쉬온리, 노리턴
-제 아이디로 검색하시면 사용하지 않은 물건들
-많이 나와요</p>
+                                        <p class="small text-muted mb-0">플러튼,엘에이 다운타운 픽업<br/>캐쉬온리, 노리턴<br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/>많이 나와요</p>
                                         <p class="small mb-0 "></p>                                        
                                     </div>
                                     </div>
@@ -177,11 +211,7 @@
                                     <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(35)"><img src = "assets\img\87673e8f-ac11-4396-8d69-6a5c808a6f1b.jpg" alt="" class="img-fluid card-img-top" loading="lazy"></a>
                                     <div class="p-4">
                                         <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(35)">New Air Fryer</a></h5>
-                                        <p class="small text-muted mb-0">New air fryer $30
-플러튼,엘에이 다운타운 픽업
-캐쉬온리, 노리턴
-제 아이디로 검색하시면 사용하지 않은 물건들
-많이 나와요</p>
+                                        <p class="small text-muted mb-0">New air fryer $30<br/><br/><br/>플러튼,엘에이 다운타운 픽업<br/>캐쉬온리, 노리턴<br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/>많이 나와요</p>
                                         <p class="small mb-0 ">30.00</p>                                        
                                     </div>
                                     </div>
