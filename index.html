@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Esther's Catalog!</title>
+        <title>My Catalog!</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -125,21 +125,51 @@
         <!-- Header-->
         <header class="masthead d-flex align-items-center" style="height:60px">
             <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">벼룩시장</h1>
-                <h3 class="mb-5"><em>가지고 있는 물건들 싸게 처리합니다 </em></h3>
-				<h3 class="mb-5"><em>LA Downtown, Fullerton 에서 픽업가능. 미시, 라디오 코리아 에서 문자나 쪽지 남겨주세요. </em></h3>
+                <h1 class="mb-1">카탈로그</h1>
+				<h5>무빙세일. 가지고 있는 물건들 싸게 처리합니다!</h5>
+        
+				<h3 class="mb-5"><em>LA Downtown, Fullerton 에서 픽업가능. MissyUSA, 라디오 코리아 에서 문자나 쪽지 남겨주세요. </em></h3>
 				<a class="btn btn-primary btn-xl" href="#catalog">물건 보기</a>
             </div>
 	
 <!-- Product Detail Begin -->
 
 			                <!-- Product Detail -->
+			                <div id="productDetail_39" class="overlay" >
+                                <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(39)">&times;</a>				                
+				                <div class="overlay-content">
+                                    <div class="overlay-inner-content">
+                                        <h2>Vacume</h2>
+					                    <h6 class="px-4">Vacume Description</h6>
+                                        <h6>34.00</h6>	
+                                        <br/>
+                                        <div id="gallery">
+                                        <div id="thumbs"><img src = "assets/img/28aac588-e6c4-42d3-82bc-4a65b95cc93d.jpg" alt= "" onmouseover="displayImage(this, 39)" loading="lazy"><img src = "assets/img/5cee51e5-dc96-4d86-9da5-6c8543101c00.jpg" alt= "" onmouseover="displayImage(this, 39)" loading="lazy"></div>
+                                            <div class="row">
+                                                <div id="panel" class="col-xl-12 mx-auto">
+                                                    <img id="largeImage_39" src="assets/img/28aac588-e6c4-42d3-82bc-4a65b95cc93d.jpg" class="img-fluid card-img-top" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+					                    <br/><br/>
+                            
+					                    <div class="d-flex justify-content-center">
+						                    <a class="btn btn-primary text-white"  onclick="closeProductDetail(39)">Close</a>
+					                    </div>		
+                                        <br/><br/>
+                                    </div>
+				                </div>
+			                </div>		
+			                <!-- End-->
+                            
+			                <!-- Product Detail -->
 			                <div id="productDetail_36" class="overlay" >
                                 <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(36)">&times;</a>				                
 				                <div class="overlay-content">
                                     <div class="overlay-inner-content">
-                                        <h2>Sound Bar</h2>
-					                    <h6 class="px-4">플러튼,엘에이 다운타운 픽업<br/>캐쉬온리, 노리턴<br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/>많이 나와요</h6>
+                                        <h2>Sound Bar (스피커)</h2>
+					                    <h6 class="px-4"><h2>플러튼,엘에이 다운타운 픽업</h2><br/><br/>캐쉬온리, <font color='red'>노리턴</font><br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/><b>많이 나와요</b></h6>
                                         <h6>25.00</h6>	
                                         <br/>
                                         <div id="gallery">
@@ -201,10 +231,22 @@
 <!-- Catalog Items Begin -->
                             <!-- Gallery item -->
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(39)"><img src = "assets\img\28aac588-e6c4-42d3-82bc-4a65b95cc93d.jpg" alt="" class="img-fluid card-img-top" loading="lazy"></a>
+                                    <div class="p-4">
+                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(39)">Vacume</a></h5>
+                                        <p class="small text-muted mb-0">Vacume Description</p>
+                                        <p class="small mb-0 ">34.00</p>                                        
+                                    </div>
+                                    </div>
+                                </div>
+                            <!-- End -->
+                            
+                            <!-- Gallery item -->
+                                <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
                                     <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(36)"><img src = "assets\img\58fc4121-0b0b-4919-ba8e-e85af4e80639.PNG" alt="" class="img-fluid card-img-top" loading="lazy"></a>
                                     <div class="p-4">
-                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(36)">Sound Bar</a></h5>
-                                        <p class="small text-muted mb-0">플러튼,엘에이 다운타운 픽업<br/>캐쉬온리, 노리턴<br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/>많이 나와요</p>
+                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(36)">Sound Bar (스피커)</a></h5>
+                                        <p class="small text-muted mb-0"><h2>플러튼,엘에이 다운타운 픽업</h2><br/><br/>캐쉬온리, <font color='red'>노리턴</font><br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/><b>많이 나와요</b></p>
                                         <p class="small mb-0 ">25.00</p>                                        
                                     </div>
                                     </div>
