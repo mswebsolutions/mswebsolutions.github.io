@@ -1,327 +1,387 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>My Catalog!</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Simple line icons-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-		
-		<style>
-			.overlay {
-			  height: 100%;
-			  width: 0;
-			  position: fixed;
-			  z-index: 1;
-			  top: 0;
-			  left: 0;
-			  background-color: rgb(0,0,0);
-			  background-color: rgba(0,0,0, 0.9);
-			  overflow-x: hidden;
-			  transition: 0.5s;
-			}
-			.overlay-content {
-			  position: relative;
-			  top: 25%;
-			  width: 100%;
-			  text-align: center;
-			  margin-top: 10px;
-			}
-			
-			.overlay-inner-content {			
-				padding: 30px;
-				margin: 30px;
-				background-color: #ECF0F1;
-			}
-			
-			.overlay a {
-			  padding: 8px;
-			  text-decoration: none;
-			  font-size: 36px;
-			  color: #818181;
-			  display: block;
-			  transition: 0.3s;
-			}
-			.overlay a:hover, .overlay a:focus {
-			  color: #f1f1f1;
-			}
-			.overlay .closebtn {
-			  position: absolute;
-			  top: 2px;
-			  right: 45px;
-			  font-size: 60px;
-			}
-			@media screen and (max-height: 450px) {
-			  .overlay a {font-size: 20px}
-			  .overlay .closebtn {
-			  font-size: 40px;
-			  top: 15px;
-			  right: 35px;
-			  }
-			}
-			
-			.removeBodyOverFlow {
-				overflow-y:hidden;
-			}
-			
-			#thumbs img {
-				opacity: 0.5;
-				filter: alpha(opacity=50); /* msie */
-				border: 3px solid #A6ACAF;
-				width:100px;
-				margin: 2px;
-				margin-bottom: 10px;
-			}
-			
-			#thumbs img:hover {
-				opacity: 3;
-				filter: alpha(opacity=100); /* msie */	
-				border: 3px solid #F5B041;				
-			}
-			
-			#panel {
-    max-width: 1000px;
-}
-		</style>
-				
-		<script>
-			function openProductDetail(productId) {
-			  document.getElementById("productDetail_" + productId).style.width = "100%";
-			  document.body.classList.add('removeBodyOverFlow')
-			}
-			function closeProductDetail(productId) {
-			  document.getElementById("productDetail_" + productId).style.width = "0%";
-			  document.body.classList.remove('removeBodyOverFlow')
-			}
-			
-			function displayImage(imageTag, productId) {
-				imageTag.getAttribute('src')			
-				document.getElementById('largeImage_' + productId).setAttribute('src',imageTag.getAttribute('src'));
-			}
-			
-		</script>
-		
-		
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <!--a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
-        <nav id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#page-top">Big Discount Store</a></li>
-				<li class="sidebar-nav-item"><a href="#catalog">Catalog 보기</a></li>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>CompanyName · Home</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+
+
+
+
+
+
+        ul li {
+            font: 13px Verdana, 'Lucida Grande';
+            cursor: pointer;
+            -webkit-transition: padding .05s linear;
+            -moz-transition: padding .05s linear;
+            -ms-transition: padding .05s linear;
+            -o-transition: padding .05s linear;
+            transition: padding .05s linear;
+        }
+
+        ul li.nav-item {
+            position: relative;
+        }
+
+        ul > li {
+            display: inline-block;
+        }
+
+        ul li a {
+            line-height: 80px;
+            padding: 0 20px;
+            height: 80px;
+            color: #777;
+            -webkit-transition: all .1s ease-out;
+            -moz-transition: all .1s ease-out;
+            -ms-transition: all .1s ease-out;
+            -o-transition: all .1s ease-out;
+            transition: all .1s ease-out;
+        }
+
+        ul li a:hover {
+            color: #eee;
+        }
+
+
+
+
+
+
+        .dropOut .triangle {
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+            top: -8px;
+            left: 50%;
+            margin-left: -8px;
+        }
+
+        .dropdownContain {
+            width: 160px;
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            margin-left: -80px; /* half of width */
+            top: -400px;
+        }
+
+        .dropOut {
+            width: 160px;
+            background: white;
+            float: left;
+            position: relative;
+            margin-top: 0px;
+            opacity: 0;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+            -moz-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+            box-shadow: 0 1px 6px rgba(0,0,0,.15);
+            -webkit-transition: all .1s ease-out;
+            -moz-transition: all .1s ease-out;
+            -ms-transition: all .1s ease-out;
+            -o-transition: all .1s ease-out;
+            transition: all .1s ease-out;
+        }
+
+            .dropOut ul {
+                float: left;
+                padding: 10px 0;
+            }
+
+                .dropOut ul li {
+                    text-align: left;
+                    float: left;
+                    width: 125px;
+                    padding: 12px 0 10px 15px;
+                    margin: 0px 10px;
+                    color: #777;
+                    -webkit-border-radius: 4px;
+                    -moz-border-radius: 4px;
+                    border-radius: 4px;
+                    -webkit-transition: background .1s ease-out;
+                    -moz-transition: background .1s ease-out;
+                    -ms-transition: background .1s ease-out;
+                    -o-transition: background .1s ease-out;
+                    transition: background .1s ease-out;
+                }
+
+                    .dropOut ul li:hover {
+                        background: #f6f6f6;
+                    }
+
+        ul li:hover a {
+            color: white;
+        }
+
+        ul li:hover .dropdownContain {
+            top: 65px;
+        }
+
+        ul li:hover .underline {
+            border-bottom-color: #777;
+        }
+
+        ul li:hover .dropOut {
+            opacity: 1;
+            margin-top: 8px;
+        }
+
+
+
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+      <div class="text-right"><strong>Toll Free Num: 1 300 22 6868</strong></div>
+      <header>
+
+
+          <!--<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">-->
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+              <div class="container-fluid">
+                  <a class="navbar-brand" href="#">JEFIX CABINET</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarCollapse">
+                      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                          <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="#">Home</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">Drop down</a>
+
+
+                              <div class="dropdownContain">
+                                  <div class="dropOut">
+                                      <div class="triangle"></div>
+                                      <ul>
+                                          <li>Plan</li>
+                                          <li>Account Settings</li>
+                                          <li>Switch Account</li>
+                                          <li>Sign Out</li>
+                                      </ul>
+                                  </div>
+                              </div>
+
+                          </li>
+                      </ul>
+                      <form class="d-flex">
+                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success" type="submit">Search</button>
+                      </form>
+                  </div>
+              </div>
+          </nav>
+
+
+          <!--<nav>
+            <ul>
+                <li><a href="#">View</a></li>
+                <li class="drop">
+                    <a href="#">You</a>
+
+                    <div class="dropdownContain">
+                        <div class="dropOut">
+                            <div class="triangle"></div>
+                            <ul>
+                                <li>Plan</li>
+                                <li>Account Settings</li>
+                                <li>Switch Account</li>
+                                <li>Sign Out</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+                <li><a href="#">Help</a></li>
             </ul>
-        </nav-->
-        <!-- Header-->
-        <header class="masthead d-flex align-items-center" style="height:60px">
-            <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">카탈로그</h1>
-				<h5>무빙세일. 가지고 있는 물건들 싸게 처리합니다!</h5>
-        
-				<h3 class="mb-5"><em>LA Downtown, Fullerton 에서 픽업가능. MissyUSA, 라디오 코리아 에서 문자나 쪽지 남겨주세요. </em></h3>
-				<a class="btn btn-primary btn-xl" href="#catalog">물건 보기</a>
-            </div>
-	
-<!-- Product Detail Begin -->
+        </nav>-->
 
-			                <!-- Product Detail -->
-			                <div id="productDetail_41" class="overlay" >
-                                <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(41)">&times;</a>				                
-				                <div class="overlay-content">
-                                    <div class="overlay-inner-content">
-                                        <h2>NEW 베큠 청소기</h2>
-					                    <h6 class="px-4">흡입력 강하고 먼지 쌓이는 BAG이 따로 필요없는 청소기입니다</h6>
-                                        <h6>120.00</h6>	
-                                        <br/>
-                                        <div id="gallery">
-                                        <div id="thumbs"><img src = "assets/img/5f46a1e4-bf70-49fd-a6ae-72d3afb38308.PNG" alt= "" onmouseover="displayImage(this, 41)" loading="lazy"><img src = "assets/img/055cc9c5-d085-4607-9cf7-bf833d9582c4.jpg" alt= "" onmouseover="displayImage(this, 41)" loading="lazy"><img src = "assets/img/b350385f-e627-4545-8dfc-a55630f63298.jpg" alt= "" onmouseover="displayImage(this, 41)" loading="lazy"></div>
-                                            <div class="row">
-                                                <div id="panel" class="col-xl-12 mx-auto">
-                                                    <img id="largeImage_41" src="assets/img/5f46a1e4-bf70-49fd-a6ae-72d3afb38308.PNG" class="img-fluid card-img-top" />
-                                                </div>
-                                            </div>
+      </header>
 
-                                        </div>
-					                    <br/><br/>
-                            
-					                    <div class="d-flex justify-content-center">
-						                    <a class="btn btn-primary text-white"  onclick="closeProductDetail(41)">Close</a>
-					                    </div>		
-                                        <br/><br/>
-                                    </div>
-				                </div>
-			                </div>		
-			                <!-- End-->
-                            
-			                <!-- Product Detail -->
-			                <div id="productDetail_40" class="overlay" >
-                                <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(40)">&times;</a>				                
-				                <div class="overlay-content">
-                                    <div class="overlay-inner-content">
-                                        <h2>NEW 에어 쿨러</h2>
-					                    <h6 class="px-4">높이 45inch</h6>
-                                        <h6>90.00</h6>	
-                                        <br/>
-                                        <div id="gallery">
-                                        <div id="thumbs"><img src = "assets/img/2d43c194-ef66-4d2a-838c-3258f2175d5d.PNG" alt= "" onmouseover="displayImage(this, 40)" loading="lazy"><img src = "assets/img/18368f6b-0965-4a4c-9474-faf35b946113.PNG" alt= "" onmouseover="displayImage(this, 40)" loading="lazy"><img src = "assets/img/091064aa-53af-41b0-a7dc-f6608893b100.jpg" alt= "" onmouseover="displayImage(this, 40)" loading="lazy"><img src = "assets/img/b0081d84-9280-4f95-89d2-a7dd9a051b63.jpg" alt= "" onmouseover="displayImage(this, 40)" loading="lazy"></div>
-                                            <div class="row">
-                                                <div id="panel" class="col-xl-12 mx-auto">
-                                                    <img id="largeImage_40" src="assets/img/2d43c194-ef66-4d2a-838c-3258f2175d5d.PNG" class="img-fluid card-img-top" />
-                                                </div>
-                                            </div>
+      <main>
 
-                                        </div>
-					                    <br/><br/>
-                            
-					                    <div class="d-flex justify-content-center">
-						                    <a class="btn btn-primary text-white"  onclick="closeProductDetail(40)">Close</a>
-					                    </div>		
-                                        <br/><br/>
-                                    </div>
-				                </div>
-			                </div>		
-			                <!-- End-->
-                            
-			                <!-- Product Detail -->
-			                <div id="productDetail_36" class="overlay" >
-                                <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(36)">&times;</a>				                
-				                <div class="overlay-content">
-                                    <div class="overlay-inner-content">
-                                        <h2>Sound Bar (스피커)</h2>
-					                    <h6 class="px-4"><h2>플러튼,엘에이 다운타운 픽업</h2><br/><br/>캐쉬온리, <font color='red'>노리턴</font><br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/><b>많이 나와요</b></h6>
-                                        <h6>25.00</h6>	
-                                        <br/>
-                                        <div id="gallery">
-                                        <div id="thumbs"><img src = "assets/img/58fc4121-0b0b-4919-ba8e-e85af4e80639.PNG" alt= "" onmouseover="displayImage(this, 36)" loading="lazy"><img src = "assets/img/29ad8898-8dd1-4afd-b31a-2055596dcf10.jpg" alt= "" onmouseover="displayImage(this, 36)" loading="lazy"><img src = "assets/img/ffbf075e-59e4-4301-b33d-7fb3b39f5955.jpg" alt= "" onmouseover="displayImage(this, 36)" loading="lazy"><img src = "assets/img/f9311b71-5f9c-45eb-a8d8-a255871bf48e.jpg" alt= "" onmouseover="displayImage(this, 36)" loading="lazy"><img src = "assets/img/1af6d62e-a932-4950-b7e5-937245ef8439.jpg" alt= "" onmouseover="displayImage(this, 36)" loading="lazy"></div>
-                                            <div class="row">
-                                                <div id="panel" class="col-xl-12 mx-auto">
-                                                    <img id="largeImage_36" src="assets/img/58fc4121-0b0b-4919-ba8e-e85af4e80639.PNG" class="img-fluid card-img-top" />
-                                                </div>
-                                            </div>
+          <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
 
-                                        </div>
-					                    <br/><br/>
-                            
-					                    <div class="d-flex justify-content-center">
-						                    <a class="btn btn-primary text-white"  onclick="closeProductDetail(36)">Close</a>
-					                    </div>		
-                                        <br/><br/>
-                                    </div>
-				                </div>
-			                </div>		
-			                <!-- End-->
-                            
-			                <!-- Product Detail -->
-			                <div id="productDetail_35" class="overlay" >
-                                <a href = "javascript:void(0)" class="closebtn" onclick="closeProductDetail(35)">&times;</a>				                
-				                <div class="overlay-content">
-                                    <div class="overlay-inner-content">
-                                        <h2>New Air Fryer</h2>
-					                    <h6 class="px-4">New air fryer $30<br/><br/><br/>플러튼,엘에이 다운타운 픽업<br/>캐쉬온리, 노리턴<br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/>많이 나와요</h6>
-                                        <h6>30.00</h6>	
-                                        <br/>
-                                        <div id="gallery">
-                                        <div id="thumbs"><img src = "assets/img/0e70aaa9-d72c-4429-98d4-bdfa45b6b267.PNG" alt= "" onmouseover="displayImage(this, 35)" loading="lazy"><img src = "assets/img/abf9eacb-8be8-4b97-9c50-c0831644dcae.jpg" alt= "" onmouseover="displayImage(this, 35)" loading="lazy"><img src = "assets/img/df6e2b48-5e4d-4fd5-861f-193d3396c240.jpg" alt= "" onmouseover="displayImage(this, 35)" loading="lazy"><img src = "assets/img/9360a66f-858a-4d25-8c99-853122ff11af.jpg" alt= "" onmouseover="displayImage(this, 35)" loading="lazy"></div>
-                                            <div class="row">
-                                                <div id="panel" class="col-xl-12 mx-auto">
-                                                    <img id="largeImage_35" src="assets/img/0e70aaa9-d72c-4429-98d4-bdfa45b6b267.PNG" class="img-fluid card-img-top" />
-                                                </div>
-                                            </div>
+                      <div class="container">
+                          <div class="carousel-caption text-start">
+                              <h1>Example headline.</h1>
+                              <p>Some representative placeholder content for the first slide of the carousel.</p>
+                              <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
 
-                                        </div>
-					                    <br/><br/>
-                            
-					                    <div class="d-flex justify-content-center">
-						                    <a class="btn btn-primary text-white"  onclick="closeProductDetail(35)">Close</a>
-					                    </div>		
-                                        <br/><br/>
-                                    </div>
-				                </div>
-			                </div>		
-			                <!-- End-->
-                            
-						
-<!-- Product Detail End -->
-			
-		</header>
-		
-<section class="content-section bg-light" id="catalog">
-<div class="row">
-<!-- Catalog Items Begin -->
-                            <!-- Gallery item -->
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(41)"><img src = "assets\img\5f46a1e4-bf70-49fd-a6ae-72d3afb38308.PNG" alt="" class="img-fluid card-img-top" loading="lazy"></a>
-                                    <div class="p-4">
-                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(41)">NEW 베큠 청소기</a></h5>
-                                        <p class="small text-muted mb-0">흡입력 강하고 먼지 쌓이는 BAG이 따로 필요없는 청소기입니다</p>
-                                        <p class="small mb-0 ">120.00</p>                                        
-                                    </div>
-                                    </div>
-                                </div>
-                            <!-- End -->
-                            
-                            <!-- Gallery item -->
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(40)"><img src = "assets\img\2d43c194-ef66-4d2a-838c-3258f2175d5d.PNG" alt="" class="img-fluid card-img-top" loading="lazy"></a>
-                                    <div class="p-4">
-                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(40)">NEW 에어 쿨러</a></h5>
-                                        <p class="small text-muted mb-0">높이 45inch</p>
-                                        <p class="small mb-0 ">90.00</p>                                        
-                                    </div>
-                                    </div>
-                                </div>
-                            <!-- End -->
-                            
-                            <!-- Gallery item -->
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(36)"><img src = "assets\img\58fc4121-0b0b-4919-ba8e-e85af4e80639.PNG" alt="" class="img-fluid card-img-top" loading="lazy"></a>
-                                    <div class="p-4">
-                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(36)">Sound Bar (스피커)</a></h5>
-                                        <p class="small text-muted mb-0"><h2>플러튼,엘에이 다운타운 픽업</h2><br/><br/>캐쉬온리, <font color='red'>노리턴</font><br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/><b>많이 나와요</b></p>
-                                        <p class="small mb-0 ">25.00</p>                                        
-                                    </div>
-                                    </div>
-                                </div>
-                            <!-- End -->
-                            
-                            <!-- Gallery item -->
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                                    <div class="bg-white rounded shadow-sm"><a href="javascript: void(null);" onclick="openProductDetail(35)"><img src = "assets\img\0e70aaa9-d72c-4429-98d4-bdfa45b6b267.PNG" alt="" class="img-fluid card-img-top" loading="lazy"></a>
-                                    <div class="p-4">
-                                        <h5> <a href="javascript: void(null);" class="text-dark" onclick="openProductDetail(35)">New Air Fryer</a></h5>
-                                        <p class="small text-muted mb-0">New air fryer $30<br/><br/><br/>플러튼,엘에이 다운타운 픽업<br/>캐쉬온리, 노리턴<br/><br/>제 아이디로 검색하시면 사용하지 않은 물건들<br/>많이 나와요</p>
-                                        <p class="small mb-0 ">30.00</p>                                        
-                                    </div>
-                                    </div>
-                                </div>
-                            <!-- End -->
-                            
-                            
-<!-- Catalog Items End -->
-    </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container px-4 px-lg-5">
-        
-                <p class="text-muted small mb-0">Copyright &copy; Me 2022</p>
-            </div>
-        </footer>
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+                      <div class="container">
+                          <div class="carousel-caption">
+                              <h1>Another example headline.</h1>
+                              <p>Some representative placeholder content for the second slide of the carousel.</p>
+                              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+
+                      <div class="container">
+                          <div class="carousel-caption text-end">
+                              <h1>One more for good measure.</h1>
+                              <p>Some representative placeholder content for the third slide of this carousel.</p>
+                              <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+
+
+          <!-- Marketing messaging and featurettes
+        ================================================== -->
+          <!-- Wrap the rest of the page in another container to center all the content. -->
+
+          <div class="container marketing">
+
+              <!-- Three columns of text below the carousel -->
+              <div class="row">
+                  <div class="col-lg-4">
+                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+                      <h2>Heading</h2>
+                      <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+                      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                  </div><!-- /.col-lg-4 -->
+                  <div class="col-lg-4">
+                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+                      <h2>Heading</h2>
+                      <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+                      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                  </div><!-- /.col-lg-4 -->
+                  <div class="col-lg-4">
+                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+                      <h2>Heading</h2>
+                      <p>And lastly this, the third column of representative placeholder content.</p>
+                      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                  </div><!-- /.col-lg-4 -->
+              </div><!-- /.row -->
+              <!-- START THE FEATURETTES -->
+
+              <hr class="featurette-divider">
+
+              <div class="row featurette">
+                  <div class="col-md-7">
+                      <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+                      <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+                  </div>
+                  <div class="col-md-5">
+                      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+                  </div>
+              </div>
+
+              <hr class="featurette-divider">
+
+              <div class="row featurette">
+                  <div class="col-md-7 order-md-2">
+                      <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+                      <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+                  </div>
+                  <div class="col-md-5 order-md-1">
+                      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+                  </div>
+              </div>
+
+              <hr class="featurette-divider">
+
+              <div class="row featurette">
+                  <div class="col-md-7">
+                      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                      <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+                  </div>
+                  <div class="col-md-5">
+                      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+                  </div>
+              </div>
+
+              <hr class="featurette-divider">
+
+              <!-- /END THE FEATURETTES -->
+
+          </div><!-- /.container -->
+          <!-- FOOTER -->
+          <footer class="container">
+              <p class="float-end"><a href="#">Back to top</a></p>
+              <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+          </footer>
+      </main>
+
+
+      <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
 </html>
